@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: #f5f5f5;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  height: 76px;
+  width: 100%;
+  background: white;
+}
+.logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+}
+.container {
+  margin-top: 76px;
+  padding: 50px 100px;
+}
+
+.row-1,
+.row-2 {
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.row-1 .content,
+.row-2 .content {
+  background: #fff;
+  width: 300px;
+  padding: 2%;
+  margin: 10px 40px;
+  display: inline-block;
+}
+
+/*hamberger menu*/
+
+.hamberger {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1002; /*on top of all elements*/
+}
+
+.hamberger .line {
+  background: black;
+  width: 32px;
+  height: 4px;
+  margin-bottom: 4px;
+  opacity: 1;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.hamberger:hover .top {
+  transform: translateY(-100%);
+}
+.hamberger:hover .bottom {
+  transform: translateY(100%);
+}
+
+/*nav bar down down thing*/
+
+.menu {
+  position: fixed;
+  top: -250%; /*makes it move to the top of the web page (cant see it) */
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.95;
+  z-index: 1001;
+  transition: all 0.5s ease;
+}
+
+.menu-item {
+  list-style: none;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.menu-item li {
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: black;
+}
+
+.menu-item li.home a {
+  color: skyblue;
+}
+
+.menu-item li.profile a {
+  color: limegreen;
+}
+
+.menu-item li.blog a {
+  color: pink;
+}
+
+.menu-item li.instagram a {
+  color: orange;
+}
+
+.menu-item li.contact a {
+  color: purple;
+}
+
+.menu.menu-active {
+  top: 0;
+}
+
+/*Creating x close button*/
+.hamberger .top.hamberger-top {
+  transform: translateY(200%) rotate(135deg);
+}
+.hamberger .bottom.hamberger-bottom {
+  transform: translateY(-200%) rotate(-135deg);
+}
+.hamberger .center.hamberger-center {
+  opacity: 0;
+}
+/*using media query to make containers responsive*/
+@media screen and (max-width: 860px) {
+  .container {
+    padding: 50px;
+  }
+  .row-1 .content,
+  .row-2 .content {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
